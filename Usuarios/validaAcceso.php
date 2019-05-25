@@ -23,7 +23,7 @@
 	}else {
 		//Validar contraseña
 		$fila=mysqli_fetch_row($query);
-		if ($password==$fila[1] and $key==$fila[2]) {
+		if ($password==$fila[1]) {
 			if ($fila[4]==1) {
 				print("Acceso Correcto");
 				printf("<br>");
