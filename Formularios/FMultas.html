@@ -1,0 +1,71 @@
+<?php session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="PMultas.php">
+  <p>Multas</p>
+  <p>
+    <label>Folio
+    <input name="folio" type="number" id="folio" required="required"/>
+    </label>
+  </p>
+  <p>
+    <label>Vehiculo
+    <input name="vehiculo" type="text" id="vehiculo" required/>
+    </label>
+</p>
+  <p>
+    <label>Verificacion
+    <input name="verificacion" type="text" id="verificacion" required/>
+    </label>
+</p>
+  <p>
+    <label>Licencia
+    <input name="licencia" type="text" id="licencia" required/>
+    </label>
+  </p>
+  <p>
+    <label></label>
+    <label>Descripcion
+    <input name="descripcion" type="text" id="descripcion" required/>
+    </label>
+</p>
+  <p>
+    <label></label>
+    <label>Monto
+    <input name="monto" type="number" id="monto" required/>
+    </label>
+</p>
+  <p>
+    <label>Fecha
+    <input name="fecha" type="date" id="fecha" required/>
+    </label>
+</p>
+  <p>
+    <label>Motivo
+    <input name="motivo" type="text" id="motivo" required/>
+    </label>
+  </p>
+  <p>
+    <label>Emisor
+    <input name="emisor" type="text" id="emisor" required/>
+    </label>
+  </p>
+  <p>
+    <label></label>
+    <label>Garantia
+    <input name="garantia" type="text" id="garantia" />
+    </label>
+  </p>
+  <p>
+    <input type="submit" name="Submit" value="Enviar" />
+  </p>
+</form>
+<button onclick="window.location = '../menu.html'">Regresar</button>
+</body>
+</html>

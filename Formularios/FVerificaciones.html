@@ -1,0 +1,53 @@
+<?php session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="PVerificaciones.php">
+  <p>Verificaciones</p>
+  <p>
+    <label>ID Verificacion 
+    <input name="idVerificacion" type="number" id="idVerificacion" required="required">
+    </label>
+  </p>
+  <p>
+    <label>Vehiculo
+    <input name="vehiculo" type="number" id="vehiculo" required="required"/>
+    </label>
+</p>
+  <p>
+    <label>Periodo
+    <input name="periodo" type="text" id="periodo" required="required"/>
+    </label>
+</p>
+  <p>
+    <label></label>
+    <label></label><label>Centro Verificador 
+    <input name="centroVerificacion" type="text" id="centroVerificacion" required/>
+    </label>
+  </p>
+  <p>
+    <label>Tipo
+    <input name="tipo" type="text" id="tipo" required/>
+          </label>
+  </p>
+  <p>
+    <label>Dictamen
+    <input name="dictamen" type="text" id="dictamen" required/>
+    </label>
+    <label></label>
+  </p>
+  <p>
+    <label></label>
+  </p>
+  <p>
+    <input type="submit" name="Submit" value="Enviar" />
+  </p>
+</form>
+<button onclick="window.location = '../menu.html'">Regresar</button>
+</body>
+</html>

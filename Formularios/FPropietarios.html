@@ -1,0 +1,43 @@
+<?php session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="PPropietarios.php">
+  <p>Propietarios</p>
+  <p>
+    <label>RFC
+    <input name="rfc" type="text" id="rfc" required/>
+    </label>
+  </p>
+  <p>
+    <label>Nombre
+    <input name="nombre" type="text" id="nombre" required/>
+    </label>
+  </p>
+  <p>
+    <label>Direccion
+    <input name="direccion" type="text" id="direccion" required/>
+    </label>
+  </p>
+  <p>
+    <label>Telefono
+    <input name="telefono" type="tel" id="telefono" />
+    </label>
+</p>
+  <p>
+    <label>Correo
+    <input name="correo" type="email" id="correo" />
+    </label>
+  </p>
+  <p>
+    <input type="submit" name="Submit" value="Enviar" />
+  </p>
+</form>
+<button onclick="window.location = '../menu.html'">Regresar</button>
+</body>
+</html>

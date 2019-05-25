@@ -1,0 +1,11 @@
+2019-05-07 16:18:13: empty string!!!2019-05-07 16:18:55: empty string!!!2019-05-07 16:18:55: empty string!!!2019-05-07 16:19:17: <br />
+<b>Warning</b>:  strlen() expects parameter 1 to be string, resource given in <b>C:\xampp\htdocs\daad\phpqrcode\qrsplit.php</b> on line <b>250</b><br />
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>C:\xampp\htdocs\daad\phpqrcode\qrinput.php</b> on line <b>522</b><br />
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>C:\xampp\htdocs\daad\phpqrcode\qrinput.php</b> on line <b>522</b><br />
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>C:\xampp\htdocs\daad\phpqrcode\qrinput.php</b> on line <b>594</b><br />
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>C:\xampp\htdocs\daad\phpqrcode\qrinput.php</b> on line <b>688</b><br />
+2019-05-07 16:51:11: empty string!!!2019-05-07 16:51:38: WRONG VERSION2019-05-07 16:51:47: WRONG VERSION2019-05-07 16:52:31: WRONG VERSION2019-05-07 16:52:38: WRONG VERSION

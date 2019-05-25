@@ -1,0 +1,115 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet"> -->
+	<title>
+		Sistema de Control Vehicular
+	</title>
+</head>
+<body>
+	<div id="contenedor">
+		<h1 id="titulo">CONSULTAS</h1>
+		<div class="botones">
+			<button onclick="consultas('a')">Vehiculos</button>
+		</div>
+		<div class="botones">
+			<button onclick="consultas('b')">Licencias</button>
+		</div>
+		<div class="botones">
+			<button onclick="consultas('c')">Conductores</button>
+		</div>
+		<div class="botones">
+			<button onclick="consultas('d')">Propietarios</button>
+		</div>
+		<div class="botones">
+			<button onclick="consultas('e')">Multas</button>
+		</div>
+		<div class="botones">
+			<button onclick="consultas('f')">Verificaciones</button>
+		</div>
+		<div id="cuenta">
+			<button onclick="regresar()">Regresar</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function consultas(argument) {
+			switch(argument) {
+				case "a":
+					window.location="Consulta/FCVehiculos.php";
+					break;
+				case "b":
+					window.location="Consulta/FCLicencias.php";
+					break;
+				case "c":
+					window.location="Consulta/FCConductores.php";
+					break;
+				case "d":
+					window.location="Consulta/FCPropietarios.php";
+					break;
+				case "e":
+					window.location="Consulta/FCMultas.php";
+					break;
+				case "f":
+					window.location="Consulta/FCVerificaciones.php";
+					break;
+				default:
+					
+			}
+		}
+		function regresar() {
+			window.location="menu.html";
+		}
+	</script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'Stylish', sans-serif;
+		}
+		body{
+			background-color: white;
+		}
+		#titulo{
+			width: 100%;
+			text-align: center;
+		}
+		#contenedor{
+			background-color: #75B3A6;
+			width: calc(100% - 20px);
+			height: 500px;
+			margin: 10px;
+			border-radius: 10px;
+			padding: 30px;
+			color: black;
+			box-sizing: border-box;
+		}
+		.botones{
+			justify-content:center;
+			display: flex;
+			margin-top: 25px;
+		}
+		#cuenta{
+			margin-top: 90px;
+		}
+		button{
+			border-radius: 5px;
+			background-color: #16293A;
+			border-color: white;
+			width: 110px;
+			height: 25px;
+			margin-left: 10px;
+			color: white;
+			font-size: 17px;
+			align-content: center;
+		}
+		p{
+			width: 100%;
+			text-align: center;
+			margin-top: 20px;
+			font-size: 25px;
+			
+		}
+	</style>
+</body>
+</html>

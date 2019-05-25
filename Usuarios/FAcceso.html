@@ -1,0 +1,81 @@
+<?php session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>INICIO DE SESION</title>
+</head>
+
+<body>
+	<div id="out">
+		<h1 id="titulo">INICIO DE SESION</h1>
+		<div id="in">
+			<form id="form1" name="form1" method="get" action="validaAcceso.php">
+			  <p>Username:
+			    <input name="username" type="text" id="username" />
+			</p>
+			  <p>Password:
+			    <input name="password" type="text" id="password" />
+			</p>
+			<p>Key:
+			    <input name="key" type="text" id="key" />
+			</p>
+			  <p>
+			    <input class="boton" id="enviar" type="submit" name="Submit" value="Enviar" />
+			  </p>
+			</form>
+			<!-- <button class="boton" onclick="nvoUser()">Nuevo Usuario</button> -->
+		</div>
+	</div>
+	<style type="text/css">
+		#out{
+			background-color: #75B3A6;
+			color: black;
+			border-radius: 10px;
+			padding: 5px;
+			align-content: center;
+		}
+		#titulo{
+			width: 100%;
+			text-align: center;
+		}
+		#in{
+			margin-left: 35%;
+		}
+		.boton{
+			border-radius: 10px;
+		}
+		#username{
+			margin-left: 12px;
+		}
+		#password{
+			margin-left: 17px;
+		}
+		#key{
+			margin-left: 70px;
+			width: 500px;
+		}
+		#enviar{
+			border-radius: 5px;
+			background-color: #16293A;
+			border-color: white;
+			width: 110px;
+			height: 25px;
+			margin-left: 10px;
+			color: white;
+			font-size: 17px;
+			align-content: center;
+		}
+		p{
+			margin-top: 20px;
+			font-size: 25px;
+			
+		}
+	</style>
+	<script type="text/javascript">
+		function nvoUser(){
+			window.location="nuevoUsuario.html";
+		}
+	</script>
+</body>
+</html>
