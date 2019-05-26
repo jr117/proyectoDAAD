@@ -8,8 +8,8 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE DATABASE IF NOT EXISTS `controlVehicular` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `controlVehicular`;
+CREATE DATABASE IF NOT EXISTS `controlVehicular2019-2` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `controlVehicular2019-2`;
 
 CREATE TABLE `conductores` (
   `rfc` char(13) NOT NULL,
