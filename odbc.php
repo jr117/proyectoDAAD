@@ -1,6 +1,6 @@
 <?php
 
-	$parametros=parse_ini_file('./configuracion.ini');
+	$parametros=parse_ini_file('configuracion.ini');
 
 	$dns=$parametros["ODBCdns"];
 	$usuario=$parametros["ODBCuser"];
