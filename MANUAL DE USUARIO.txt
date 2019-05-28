@@ -21,3 +21,7 @@
 
 -localhost/SCV/INICIO.html
 
+
+
+LOS USUARIOS PREDETERMINADOS ESTAN EN EL TXT: "UsuariosPredeterminados"
+Favor de no perder o modificar el archivo
