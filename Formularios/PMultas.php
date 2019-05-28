@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php 
 	include('../valida.php');
+	include('../creaCodigos.php');
 	valida();
 
 	include('multasXML.php');
@@ -27,6 +28,8 @@
 	print("Monto: " . $monto . "<br>");
 	print("Descripcion: " . $descripcion . "<br>");
 	print("Garantia: " . $garantia . "<br>");
+
+	$rutaCodigo = creaBarra($folio);
 
 	include("conexion.php");
 	$Con= Conectar();

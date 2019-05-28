@@ -2,6 +2,7 @@
 <?php 
 	include('../valida.php');
 	include('../odbc.php');
+	include('../creaCodigos.php');
 	valida();
 
 	include('vehiculosXML.php');
@@ -44,6 +45,8 @@
 	print("Origen: " . $origen . "<br>");
 	print("Numero de Puertas: " . $numPuerta . "<br>");	
 
+	$contenidoCodigo = "ID:".$idVehiculo." Propietario:".$propietario." Placa:".$placa;
+	$rutaCodigo = creaQR($contenidoCodigo);
 
 	//borra antes de insertar
 	$datoBorrar=$idVehiculo;

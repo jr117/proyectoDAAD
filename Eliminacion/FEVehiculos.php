@@ -20,7 +20,11 @@
 <?php 
 	include('../valida.php');
 	include('../odbc.php');
+	include('../creaCodigos.php');
 	valida();
+
+	$contenidoCodigo = "ID Vehiculo:".$idVehiculo;
+	$rutaCodigo = creaQR($contenidoCodigo);
 
 	include('EvehiculosXML.php');
 	if(isset($_POST['datoBorrar'])){

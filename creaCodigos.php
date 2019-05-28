@@ -10,7 +10,7 @@
 		}
 		$filename = $dir.'qr.png';
 		QRcode::png($contenido,$filename);
-		return $filename;
+		return "../".$filename;
 	}
 
 	public function creaBarra($contenido)
@@ -21,7 +21,7 @@
 		}
 		$filename = $dir.'cb.png';
 		barcode($filename, $contenido, 20, 'horizontal', 'code128', true);
-		return $filename;
+		return "../".$filename;
 	}
 
 ?>

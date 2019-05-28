@@ -2,6 +2,7 @@
 <?php 
 
 	include('../valida.php');
+	include('../creaCodigos.php');
 	valida();
 
 	
@@ -44,7 +45,8 @@
 	print("Fecha de Vencimiento: " . $fechaVencimiento . "<br>");
 	print("Estado de Emision: " . $estadoEmision . "<br>");
 
-
+	$contenidoCodigo = "Folio:".$folio." Conductor:".$conductor." TipoLicencia:".$tipo;
+	$rutaCodigo = creaQR($contenidoCodigo);
 
 	include("conexion.php");
 	$Con= Conectar();
