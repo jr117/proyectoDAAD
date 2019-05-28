@@ -2,7 +2,7 @@
 <?php
 
 	function Conectar(){
-		$parametros=parse_ini_file('C:\xampp\htdocs\DAAD2019262925\configuracion.ini');
+		$parametros=parse_ini_file('./configuracion.ini');
 		$Servidor=$parametros["Server"];
 		$User=$parametros["UserName"];
 		$Password=$parametros["Password"];

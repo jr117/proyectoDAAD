@@ -19,6 +19,7 @@
 
 <?php 
 	include('../valida.php');
+	include('../odbc.php');
 	valida();
 
 	include('EvehiculosXML.php');
@@ -37,6 +38,7 @@
 		}elseif($Status == 0){
 			print("No se encontro el dato");
 		}else{
+			odbc_exec($conexionODBC, $SQL);
 			print("Se eliminaron ".$Status." registro(s)");
 			print("<br>");
 			Elimina($datoBorrar);

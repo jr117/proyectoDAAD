@@ -1,6 +1,7 @@
 <?php session_start();?>
 <?php 
 	include('../valida.php');
+	include('../odbc.php');
 	valida();
 
 	include('vehiculosXML.php');
@@ -59,12 +60,13 @@
 	}elseif($Status == 0){
 		print("No se encontro el dato");
 	}else{
-		
+		odbc_exec($conexionODBC, $SQL);
 		//explicito
 		$SQL= "INSERT INTO vehiculos (numPuerta,marca,numMotor,numSerie,modelo,combustible,ano,numeroCilindro,transmision,linea,origen,color,tipo,uso,placa,niv, propietario,idVehiculo) VALUES('$numPuerta','$marca','$numMotor','$numSerie','$modelo','$combustible','$ano','$numeroCilindro','$transmision','$linea','$origen','$color','$tipo','$uso','$placa','$niv','$propietario','$idVehiculo');";
 		$Query = EjecutarConsulta($Con,$SQL);
 		//VERIFICAR SI SE HICIERON CAMBIOS O HUBO ERROR
 		if($Query == 1){
+			odbc_exec($conexionODBC, $SQL);
 			print("Registro modificado");
 			print("<br>");
 			Elimina($idVehiculo);

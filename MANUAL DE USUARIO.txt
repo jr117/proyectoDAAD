@@ -1,0 +1,23 @@
+-XAMPP
+-driver odbc-mysql
+
+
+-xamp-activa apache mysql
+-127.0.0.1/phpmyadmin/server_import.php
+-impoirtar 2
+	-SQL_controlVehicular.sql
+	-SQL_espejoVehiculos.sql
+
+-Abrir: Herramientas administrativas
+-Abrir(Como Administrador): ODBC Data Sources (32-bit)
+-Ir a pestaña DNS de Sistema
+-Agregar:
+	-Elegir MySQL ODBC Unicode
+	-Rellenar solo los campos:
+		-Nombre: espejoV
+		-Usuario: root
+		-Database: Elegir: espejovehiculos
+	-Boton probar (Si sale conexion correcta dar ok, sino verificar los pasos anteriores)
+
+-localhost/SCV/INICIO.html
+

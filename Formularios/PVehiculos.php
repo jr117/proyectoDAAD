@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php 
 	include('../valida.php');
+	include('../odbc.php');
 	valida();
 
 	include('vehiculosXML.php');
@@ -50,6 +51,7 @@
 	$Query = EjecutarConsulta($Con,$SQL);
 	//VERIFICAR SI SE HICIERON CAMBIOS O HUBO ERROR
 	if($Query == 1){
+		odbc_exec($conexionODBC, $SQL);
 		print("Registro insertado");
 		print("<br>");
 		Incio($idVehiculo,$propietario,$niv,$placa,$uso,$tipo,$color,$origen,$linea,$transmision,$numeroCilindro,$ano,$combustible,$modelo,$numSerie,$numMotor,$marca,$numPuerta);
