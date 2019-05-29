@@ -1,6 +1,8 @@
 -XAMPP
 -driver odbc-mysql
+-Composer-Setup
 
+-cmd: composer require mpdf/mpdf
 
 -xamp-activa apache mysql
 -127.0.0.1/phpmyadmin/server_import.php
@@ -10,7 +12,7 @@
 
 -Abrir: Herramientas administrativas
 -Abrir(Como Administrador): ODBC Data Sources (32-bit)
--Ir a pestaña DNS de Sistema
+-Ir a pestaÃ±a DNS de Sistema
 -Agregar:
 	-Elegir MySQL ODBC Unicode
 	-Rellenar solo los campos:
