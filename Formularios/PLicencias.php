@@ -3,6 +3,7 @@
 
 	include('../valida.php');
 	include('../creaCodigos.php');
+	require('../lib/pdf/mpdf.php');
 	valida();
 
 	
@@ -67,4 +68,49 @@
 	}
 	Cerrar($Con);
 	header("refresh:3;url=../menu.html");
+	// mPDF
+	$html = '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<header class="clearfix">
+      <div id="logo">
+        <img src="./images/logo.png">
+      </div>
+      <h1>PROPIETARIOS DE AUTOS</h1>
+      <div id="project">
+        <div><span>Empresa</span> Instituto Queretano de Transporte </div>     
+        <div><span>Direccion</span>Av Constituyentes 20, Centro, 76000 Santiago de Querétaro, Qro.</div>
+        <div><span>E-mail</span> <a href="mailto:john@example.com">transporte@iqt.com</a></div>
+        <div><span>Fecha</span> August 17, 2015</div>
+        <div><span>Telefono</span>01 442 210 0303</div>
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th class="service">Id</th>
+            <th class="desc">Propietario</th>
+            <th>Placa</th>
+            <th>Modelo</th>
+            <th>Color</th
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service">'.$folio.'</td>
+            <td class="desc">'.$conductor.'</td>
+            <td class="unit">'.$tipo.'</td>
+            <td class="qty">'.$fechaExpedicion.'</td>	
+            <td class="total">'.$vigencia.'</td>
+          </tr>
+        </tbody>
+      </table>
+	   <div id="logo">
+		 <img src="./temp/qr.png">
+	  </div>
+    </main>';
+$mpdf = new mPDF('c','A4');
+$css = file_get_contents('../cssPDF/style.css');
+$mpdf-> writeHTML($css,1);
+$mpdf->writeHTML(utf8_encode($html));
+$mpdf->Output('..\temp\Vehiculo-'.$idVehiculo.'.pdf','F');
 ?>
