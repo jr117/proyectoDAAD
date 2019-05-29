@@ -2,6 +2,7 @@
 -driver odbc-mysql
 -Composer-Setup
 
+-cmd: composer install
 -cmd: composer require mpdf/mpdf
 
 -xamp-activa apache mysql
