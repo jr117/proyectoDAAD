@@ -2,7 +2,7 @@
 	require "phpqrcode/qrlib.php";
 	require 'php-barcode-master/barcode.php';
 	
-	public function creaQR($contenido)
+	function creaQR($contenido)
 	{
 		$dir = 'temp/';
 		if (!file_exists($dir)){
@@ -13,7 +13,7 @@
 		return $filename;
 	}
 
-	public function creaBarra($contenido)
+	function creaBarra($contenido)
 	{
 		$dir = 'temp/';
 		if (!file_exists($dir)){
