@@ -98,5 +98,5 @@ $css = file_get_contents('../cssPDF/style.css');
 $mpdf-> writeHTML($css,1);
 $mpdf->writeHTML(utf8_encode($html));
 $mpdf->Output('..\temp\Multa-'.$folio.'.pdf','F');
-
+	header("refresh:3;url=../menu.html");
 ?>

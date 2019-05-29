@@ -67,7 +67,7 @@
 		print("<br>XML actualizado");
 	}
 	Cerrar($Con);
-	header("refresh:3;url=../menu.html");
+	
 	// mPDF
 	$html = '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<header class="clearfix">
@@ -113,4 +113,5 @@ $css = file_get_contents('../cssPDF/style.css');
 $mpdf-> writeHTML($css,1);
 $mpdf->writeHTML(utf8_encode($html));
 $mpdf->Output('..\temp\Vehiculo-'.$idVehiculo.'.pdf','F');
+	header("refresh:3;url=../menu.html");
 ?>
