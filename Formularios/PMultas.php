@@ -64,7 +64,7 @@
 <body>
   <header class="clearfix">
     <div id="logo">
-      <img src="./images/logo.png">
+      <img src="../images/logo.png">
     </div>
     <h1>MULTA</h1>
     <div id="project">

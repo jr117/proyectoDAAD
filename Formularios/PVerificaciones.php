@@ -50,7 +50,7 @@
 <body>
   <header class="clearfix">
     <div id="logo">
-      <img src="./images/logo.png">
+      <img src="../images/logo.png">
     </div>
     <h1>VERIFICACION</h1>
     <div id="project">
