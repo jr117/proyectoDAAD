@@ -45,7 +45,8 @@
 	$Status = mysqli_affected_rows($Con);
 	print("Estado: ".$Status."<br>");
 	if($Status == -1){
-		print("Pruebe de nuevo, error");
+		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos")
+		exit();
 	}else{
 		print("Registro insertado");
 		move_uploaded_file($_FILES["foto"]['tmp_name'], $dir.$filenameFoto);

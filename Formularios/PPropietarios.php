@@ -24,7 +24,8 @@
 	if($Query == 1){
 		print("Registro insertado");
 	}else{
-		print("Pruebe de nuevo, error");
+		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos")
+		exit();
 	}
 	Cerrar($Con);
 	header("refresh:3;url=../menu.html");

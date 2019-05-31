@@ -42,8 +42,7 @@
 	$Status = mysqli_affected_rows($Con);
 	print("Estado: ".$Status."<br>");
 	if($Status == -1){
-		print("Pruebe de nuevo, error");
-		header("refresh:5;url=../menu.html");
+		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos")
 		exit();
 	}else{
 		print("Registro insertado");

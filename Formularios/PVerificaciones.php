@@ -33,8 +33,7 @@
 		Incio($idVerificacion,$vehiculo,$periodo,$centroVerificacion,$tipo,$dictamen);
 		print("<br>XML actualizado");
 	}else{
-		print("Pruebe de nuevo, error");
-		header("refresh:5;url=../menu.html");
+		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos")
 		exit();
 	}
 	Cerrar($Con);
