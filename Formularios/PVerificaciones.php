@@ -1,10 +1,10 @@
 <?php session_start(); ?>
 <?php 
 	include('../valida.php');
-	require('../lib/pdf/mpdf.php');
+	include('verificacionesXML.php');
 	valida();
 
-	include('verificacionesXML.php');
+	
 	$idVerificacion = $_POST['idVerificacion'];
 	$vehiculo = $_POST['vehiculo'];
 	$periodo = $_POST['periodo'];
@@ -34,47 +34,60 @@
 		print("<br>XML actualizado");
 	}else{
 		print("Pruebe de nuevo, error");
+		header("refresh:5;url=../menu.html");
+		exit();
 	}
 	Cerrar($Con);
 	// mPDF
-	$html = '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<header class="clearfix">
-      <div id="logo">
-        <img src="./images/logo.png">
-      </div>
-      <h1>VERIFICACIONES</h1>
-      <div id="project">
-        <div><span>Empresa</span> Instituto Queretano de Transporte </div>     
-        <div><span>Direccion</span>Av Constituyentes 20, Centro, 76000 Santiago de Querétaro, Qro.</div>
-        <div><span>E-mail</span> <a href="mailto:john@example.com">transporte@iqt.com</a></div>
-        <div><span>Centro de verificacion:'.$color.' </span></div>
-        <div><span>Telefono</span>01 442 210 0303</div>
-      </div>
-    </header>
-    <main>
-      <table>
-        <thead>
-          <tr>
-            <th class="service">Id</th>
-            <th class="desc">Vehiculo</th>
-            <th>Periodo</th>
-            <th>Tipo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="service">'.$idVerificacion.'</td>
-            <td class="desc">'.$vehiculo.'</td>
-            <td class="unit">'.$periodo.'</td>
-            <td class="qty">'.$tipo.'</td>	
-          </tr>
-        </tbody>
-      </table>
-    </main>';
-$mpdf = new mPDF('c','A4');
-$css = file_get_contents('../cssPDF/style.css');
-$mpdf-> writeHTML($css,1);
-$mpdf->writeHTML(utf8_encode($html));
-$mpdf->Output('..\temp\Verificacion-'.$idVerificacion.'.pdf','F');
+	$html = '<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="iso-8859-1" http-equiv="Content-Type" content="text/html">
+  <title>
+    
+  </title>
+</head>
+<body>
+  <header class="clearfix">
+    <div id="logo">
+      <img src="./images/logo.png">
+    </div>
+    <h1>VERIFICACION</h1>
+    <div id="project">
+      <div><span>Empresa </span> Instituto Queretano de Transporte </div>     
+      <div><span>Direccion </span> Av Constituyentes 20, Centro, 76000 Santiago de Querétaro, Qro.</div>
+      <div><span>E-mail </span> <a href="mailto:john@example.com">transporte@iqt.com</a></div>
+      <div><span>Fecha </span> '.date("d/m/Y").'</div>
+      <div><span>Telefono </span>01 442 210 0303</div>
+    </div>
+  </header>
+  <table>
+    <thead>
+      <tr>
+        <th class="service">ID</th>
+        <th class="desc">Vehiculo</th>
+        <th>Periodo</th>
+        <th>Centro Verificador</th>
+        <th>Dictamen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="service">'.$idVerificacion.'</td>
+        <td class="desc">'.$vehiculo.'</td>
+        <td class="unit">'.$periodo.'</td>
+        <td class="qty">'.$centroVerificacion.'</td> 
+        <td class="total">'.$dictamen.'</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>';
+	require_once '../vendor/autoload.php';
+	$mpdf = new \Mpdf\Mpdf();
+	$css = file_get_contents('../cssPDF/style.css');
+	$mpdf-> writeHTML($css,1);
+	$mpdf->writeHTML(utf8_encode($html),\Mpdf\HTMLParserMode::DEFAULT_MODE);
+	$mpdf->Output('..\temp\Verificacion-'.$idVerificacion.'.pdf','F');
 	header("refresh:3;url=../menu.html");
 ?>

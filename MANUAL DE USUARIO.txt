@@ -1,4 +1,4 @@
--XAMPP
+﻿-XAMPP
 -driver odbc-mysql
 
 ?

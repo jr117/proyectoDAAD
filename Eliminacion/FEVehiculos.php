@@ -23,12 +23,12 @@
 	include('../creaCodigos.php');
 	valida();
 
-	$contenidoCodigo = "ID Vehiculo:".$idVehiculo;
-	$rutaCodigo = creaQR($contenidoCodigo);
+	
 
 	include('EvehiculosXML.php');
 	if(isset($_POST['datoBorrar'])){
 		$datoBorrar=$_POST['datoBorrar'];
+		$idVehiculo = $datoBorrar;
 		print("Identificador: ".$datoBorrar);
 		print("<br>");
 		include("conexion.php");
@@ -50,32 +50,52 @@
 		}
 		print("<br>");
 		Cerrar($Con);
+		$contenidoCodigo = "ID Vehiculo:".$idVehiculo;
+		$rutaCodigo = creaQR($contenidoCodigo);
+		creaPdf($idVehiculo);
 	}else{
 		print("No se ha modificado nada aun");
 	}
+
 	// mPDF
-	$html = '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<header class="clearfix">
-      <div id="logo">
-        <img src="./images/logo.png">
-      </div>
-      <h1>PROPIETARIOS DE AUTOS</h1>
-      <div id="project">
-        <div><span>Empresa</span> Instituto Queretano de Transporte </div>     
-        <div><span>Direccion</span>Av Constituyentes 20, Centro, 76000 Santiago de Querétaro, Qro.</div>
-        <div><span>E-mail</span> <a href="mailto:john@example.com">transporte@iqt.com</a></div>        
-        <div><span>Telefono</span>01 442 210 0303</div>
-      </div>
-    </header>
-    <main>
-	   <div>
-		 <h3>El vehiculo con id .'$datoBorrar'. se ha eliminado correctamente ! </h3>
+	function creaPdf($idVehiculo)
+	{
+		$html = '<!DOCTYPE html>
+	<html>
+	<head>
+	  <meta charset="iso-8859-1" http-equiv="Content-Type" content="text/html">
+	  <title>
+	    
+	  </title>
+	</head>
+	<body>
+	  <header class="clearfix">
+	    <div id="logo">
+	      <img src="./images/logo.png">
+	    </div>
+	    <h1>VEHICULO</h1>
+	    <div id="project">
+	      <div><span>Empresa </span> Instituto Queretano de Transporte </div>     
+	      <div><span>Direccion </span> Av Constituyentes 20, Centro, 76000 Santiago de Querétaro, Qro.</div>
+	      <div><span>E-mail </span> <a href="mailto:john@example.com">transporte@iqt.com</a></div>
+	      <div><span>Fecha </span> '.date("d/m/Y").'</div>
+	      <div><span>Telefono </span>01 442 210 0303</div>
+	    </div>
+	  </header>
+	  <div>
+	  	<h3>El vehiculo con id: '.$idVehiculo.'.  Se ha eliminado correctamente.</h3>
 	  </div>
-    </main>';
-$mpdf = new mPDF('c','A4');
-$css = file_get_contents('../cssPDF/style.css');
-$mpdf-> writeHTML($css,1);
-$mpdf->writeHTML(utf8_encode($html));
-$mpdf->Output('..\temp\Vehiculo-'.$idVehiculo.'.pdf','F');
+	</body>
+	</html>';
+
+	
+	require_once '../vendor/autoload.php';
+	$mpdf = new \Mpdf\Mpdf();
+	$css = file_get_contents('../cssPDF/style.css');
+	$mpdf-> writeHTML($css,1);
+	$mpdf->writeHTML(utf8_encode($html),\Mpdf\HTMLParserMode::DEFAULT_MODE);
+	$mpdf->Output('..\temp\Vehiculo-'.$idVehiculo.'.pdf','F');
+	}
+	
 	
  ?>

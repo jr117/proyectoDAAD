@@ -2,10 +2,10 @@
 <?php 
 	include('../valida.php');
 	include('../creaCodigos.php');
-	require('../lib/pdf/mpdf.php');
+	include('multasXML.php');
 	valida();
 
-	include('multasXML.php');
+	
 	$folio = $_POST['folio'];
 
 	$vehiculo = $_POST['vehiculo'];
@@ -43,6 +43,8 @@
 	print("Estado: ".$Status."<br>");
 	if($Status == -1){
 		print("Pruebe de nuevo, error");
+		header("refresh:5;url=../menu.html");
+		exit();
 	}else{
 		print("Registro insertado");
 		print("<br>");
@@ -51,52 +53,60 @@
 	}
 	Cerrar($Con);
 	// mPDF
-	$html = '<header class="clearfix">
-      <div id="logo">
-        <img src="./images/logo.png">
-      </div>
-      <h1>EXPEDICION DE MULTAS</h1>
-      <div id="project">
-        <div><span>Empresa</span> Instituto Queretano de Transporte </div>     
-        <div><span>Direccion</span>Av Constituyentes 20, Centro, 76000 Santiago de Querétaro, Qro.</div>
-        <div><span>E-mail</span> <a href="mailto:john@example.com">transporte@iqt.com</a></div>
-        <div><span>Telefono</span>01 442 210 0303</div>
-        <div><span>Fecha</span>' .$fecha.'</div>
-      </div>
-    </header>
-    <main>
-      <table>
-        <thead>
-          <tr>
-            <th class="service">Folio</th>
-            <th class="desc">Vehiculo</th>
-            <th>Licencia</th>
-            <th>Motivo</th>
-            <th>Emisor</th>
-            <th>Monto</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="service">'.$folio.'</td>
-            <td class="desc">'.$vehiculo.'</td>
-            <td class="unit">'.$licencia.'</td>
-            <td class="qty">'.$motivo.'</td>	
-            <td class="total">'.$emisor.'</td>
-            <td class="total">$'.$monto.'</td>
-          </tr>
-        </tbody>
-      </table>
-	  <div id="logo">
-		 <img src="./temp/cb.png">
-	  </div>
-    </main>';
+	$html = '<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="iso-8859-1" http-equiv="Content-Type" content="text/html">
+  <title>
+    
+  </title>
+</head>
+<body>
+  <header class="clearfix">
+    <div id="logo">
+      <img src="./images/logo.png">
+    </div>
+    <h1>MULTA</h1>
+    <div id="project">
+      <div><span>Empresa </span> Instituto Queretano de Transporte </div>     
+      <div><span>Direccion </span> Av Constituyentes 20, Centro, 76000 Santiago de Querétaro, Qro.</div>
+      <div><span>E-mail </span> <a href="mailto:john@example.com">transporte@iqt.com</a></div>
+      <div><span>Fecha </span> '.date("d/m/Y").'</div>
+      <div><span>Telefono </span>01 442 210 0303</div>
+    </div>
+  </header>
+  <table>
+    <thead>
+      <tr>
+        <th class="service">Folio</th>
+        <th class="desc">Vehiculo</th>
+        <th>Descripcion</th>
+        <th>Monto</th>
+        <th>Fecha de Emision</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="service">'.$folio.'</td>
+        <td class="desc">'.$vehiculo.'</td>
+        <td class="unit">'.$descripcion.'</td>
+        <td class="qty">'.$monto.'</td> 
+        <td class="total">'.$fecha.'</td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="logo">
+    <img src="./temp/cb.png">
+  </div>
+</body>
+</html>';
 
 
-$mpdf = new mPDF('c','A4');
-$css = file_get_contents('../cssPDF/style.css');
-$mpdf-> writeHTML($css,1);
-$mpdf->writeHTML(utf8_encode($html));
-$mpdf->Output('..\temp\Multa-'.$folio.'.pdf','F');
+	require_once '../vendor/autoload.php';
+	$mpdf = new \Mpdf\Mpdf();
+	$css = file_get_contents('../cssPDF/style.css');
+	$mpdf-> writeHTML($css,1);
+	$mpdf->writeHTML(utf8_encode($html),\Mpdf\HTMLParserMode::DEFAULT_MODE);
+	$mpdf->Output('..\temp\Multa-'.$folio.'.pdf','F');
 	header("refresh:3;url=../menu.html");
 ?>
