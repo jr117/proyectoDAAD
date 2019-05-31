@@ -1,12 +1,6 @@
 ﻿-XAMPP
 -driver odbc-mysql
-
-?
 -Composer-Setup
--cmd: composer dump-autoload
--cmd: composer install
--cmd: composer require mpdf/mpdf
-?
 
 -xamp-activa apache mysql
 -127.0.0.1/phpmyadmin/server_import.php
