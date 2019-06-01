@@ -61,7 +61,7 @@
 		Incio($idVehiculo,$propietario,$niv,$placa,$uso,$tipo,$color,$origen,$linea,$transmision,$numeroCilindro,$ano,$combustible,$modelo,$numSerie,$numMotor,$marca,$numPuerta);
 		print("<br>XML actualizado");
 	}else{
-		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos")
+		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos");
 		exit();
 	}
 	Cerrar($Con);

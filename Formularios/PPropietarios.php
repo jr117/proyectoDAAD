@@ -24,7 +24,7 @@
 	if($Query == 1){
 		print("Registro insertado");
 	}else{
-		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos")
+		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos");
 		exit();
 	}
 	Cerrar($Con);

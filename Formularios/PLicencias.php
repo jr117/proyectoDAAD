@@ -58,7 +58,7 @@
 	$Status = mysqli_affected_rows($Con);
 	print("Estado: ".$Status."<br>");
 	if($Status == -1){
-		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos")
+		print("Error, verifique que no exista la entrada y los tipos de dato sean correctos");
 		exit();
 	}else{
 		print("Registro insertado");
