@@ -7,65 +7,96 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="PMultas.php">
-  <p>Multas</p>
-  <p>
-    <label>Folio
-    <input name="folio" type="number" id="folio" required="required"/>
-    </label>
-  </p>
-  <p>
-    <label>Vehiculo
-    <input name="vehiculo" type="text" id="vehiculo" required/>
-    </label>
-</p>
-  <p>
-    <label>Verificacion
-    <input name="verificacion" type="text" id="verificacion" required/>
-    </label>
-</p>
-  <p>
-    <label>Licencia
-    <input name="licencia" type="text" id="licencia" required/>
-    </label>
-  </p>
-  <p>
-    <label></label>
-    <label>Descripcion
-    <input name="descripcion" type="text" id="descripcion" required/>
-    </label>
-</p>
-  <p>
-    <label></label>
-    <label>Monto
-    <input name="monto" type="number" id="monto" required/>
-    </label>
-</p>
-  <p>
-    <label>Fecha
-    <input name="fecha" type="date" id="fecha" required/>
-    </label>
-</p>
-  <p>
-    <label>Motivo
-    <input name="motivo" type="text" id="motivo" required/>
-    </label>
-  </p>
-  <p>
-    <label>Emisor
-    <input name="emisor" type="text" id="emisor" required/>
-    </label>
-  </p>
-  <p>
-    <label></label>
-    <label>Garantia
-    <input name="garantia" type="text" id="garantia" />
-    </label>
-  </p>
-  <p>
-    <input type="submit" name="Submit" value="Enviar" />
-  </p>
-</form>
-<button onclick="window.location = '../menu.html'">Regresar</button>
+  <div id="cont">
+    <form id="form1" name="form1" method="post" action="PMultas.php">
+      <h1>Multas</h1>
+      <p>
+        <label>Folio
+        <input name="folio" type="number" id="folio" required="required"/>
+        </label>
+      </p>
+      <p>
+        <label>Vehiculo
+        <input name="vehiculo" type="text" id="vehiculo" required/>
+        </label>
+    </p>
+      <p>
+        <label>Verificacion
+        <input name="verificacion" type="text" id="verificacion" required/>
+        </label>
+    </p>
+      <p>
+        <label>Licencia
+        <input name="licencia" type="text" id="licencia" required/>
+        </label>
+      </p>
+      <p>
+        <label></label>
+        <label>Descripcion
+        <input name="descripcion" type="text" id="descripcion" required/>
+        </label>
+    </p>
+      <p>
+        <label></label>
+        <label>Monto
+        <input name="monto" type="number" id="monto" required/>
+        </label>
+    </p>
+      <p>
+        <label>Fecha
+        <input name="fecha" type="date" id="fecha" required/>
+        </label>
+    </p>
+      <p>
+        <label>Motivo
+        <input name="motivo" type="text" id="motivo" required/>
+        </label>
+      </p>
+      <p>
+        <label>Emisor
+        <input name="emisor" type="text" id="emisor" required/>
+        </label>
+      </p>
+      <p>
+        <label></label>
+        <label>Garantia
+        <input name="garantia" type="text" id="garantia" />
+        </label>
+      </p>
+      <p>
+        <input class="boton" type="submit" name="Submit" value="Enviar" />
+      </p>
+    </form>
+  </div>
+
+<button class="boton" onclick="window.location = '../menu.html'">Regresar</button>
+<style type="text/css">
+#cont{
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  width: calc(100% - 20px);
+  background-color: #75B3A6;
+  margin: 10px;
+}
+.boton{
+  border-radius: 5px;
+  background-color: #16293A;
+  border-color: white;
+  width: 130px;
+  height: 25px;
+  margin-left: 10px;
+  color: white;
+  font-size: 17px;
+  align-content: center;
+}
+label{
+  font-size: 1.5em;
+}
+</style>
 </body>
 </html>

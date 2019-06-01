@@ -7,47 +7,77 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="PVerificaciones.php">
-  <p>Verificaciones</p>
-  <p>
-    <label>ID Verificacion 
-    <input name="idVerificacion" type="number" id="idVerificacion" required="required">
-    </label>
-  </p>
-  <p>
-    <label>Vehiculo
-    <input name="vehiculo" type="number" id="vehiculo" required="required"/>
-    </label>
-</p>
-  <p>
-    <label>Periodo
-    <input name="periodo" type="text" id="periodo" required="required"/>
-    </label>
-</p>
-  <p>
-    <label></label>
-    <label></label><label>Centro Verificador 
-    <input name="centroVerificacion" type="text" id="centroVerificacion" required/>
-    </label>
-  </p>
-  <p>
-    <label>Tipo
-    <input name="tipo" type="text" id="tipo" required/>
-          </label>
-  </p>
-  <p>
-    <label>Dictamen
-    <input name="dictamen" type="text" id="dictamen" required/>
-    </label>
-    <label></label>
-  </p>
-  <p>
-    <label></label>
-  </p>
-  <p>
-    <input type="submit" name="Submit" value="Enviar" />
-  </p>
-</form>
-<button onclick="window.location = '../menu.html'">Regresar</button>
+  <div id="cont">
+    <form id="form1" name="form1" method="post" action="PVerificaciones.php">
+      <h1>Verificaciones</h1>
+      <p>
+        <label>ID Verificacion 
+        <input name="idVerificacion" type="number" id="idVerificacion" required="required">
+        </label>
+      </p>
+      <p>
+        <label>Vehiculo
+        <input name="vehiculo" type="number" id="vehiculo" required="required"/>
+        </label>
+    </p>
+      <p>
+        <label>Periodo
+        <input name="periodo" type="text" id="periodo" required="required"/>
+        </label>
+    </p>
+      <p>
+        <label></label>
+        <label></label><label>Centro Verificador 
+        <input name="centroVerificacion" type="text" id="centroVerificacion" required/>
+        </label>
+      </p>
+      <p>
+        <label>Tipo
+        <input name="tipo" type="text" id="tipo" required/>
+              </label>
+      </p>
+      <p>
+        <label>Dictamen
+        <input name="dictamen" type="text" id="dictamen" required/>
+        </label>
+        <label></label>
+      </p>
+      <p>
+        <label></label>
+      </p>
+      <p>
+        <input class="boton" type="submit" name="Submit" value="Enviar" />
+      </p>
+    </form>
+  </div>
+<button class="boton" onclick="window.location = '../menu.html'">Regresar</button>
+<style type="text/css">
+#cont{
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  width: calc(100% - 20px);
+  background-color: #75B3A6;
+  margin: 10px;
+}
+.boton{
+  border-radius: 5px;
+  background-color: #16293A;
+  border-color: white;
+  width: 130px;
+  height: 25px;
+  margin-left: 10px;
+  color: white;
+  font-size: 17px;
+  align-content: center;
+}
+label{
+  font-size: 1.5em;
+}
+</style>
 </body>
 </html>

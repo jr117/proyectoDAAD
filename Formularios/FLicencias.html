@@ -7,42 +7,73 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="PLicencias.php">
-  <p>Licencias</p>
-  <p>
-    <label>Folio
-    <input name="folio" type="text" id="folio" required/>
-    </label>
-  </p>
-  <p>
-    <label>Conductor
-    <input name="conductor" type="text" id="conductor" required/>
-    </label>
-  </p>
-  <p>
-    <label>Tipo de Licencia 
-    <input name="tipo" type="text" id="tipo" required/>
-    </label>
-  </p>
-  <p>
-    <label>Fecha de Expedicion 
-    <input name="fechaExpedicion" type="date" id="fechaExpedicion" required/>
-    </label>
-</p>
-  <p>
-    <label>Vigencia (3 o 5)
-    <input name="fechaVencimiento" type="number" id="fechaVencimiento" required/>
-    </label>
-  </p>
-  <p>
-    <label>Estado de Emision
-    <input name="estadoEmision" type="text" id="estadoEmision" required/>
-    </label>
-  </p>
-  <p>
-    <input type="submit" name="Submit" value="Enviar" />
-  </p>
-</form>
-<button onclick="window.location = '../menu.html'">Regresar</button>
+  <div id="cont">
+    <form id="form1" name="form1" method="post" action="PLicencias.php">
+      <h1>Licencias</h1>
+      <p>
+        <label>Folio
+        <input name="folio" type="text" id="folio" required/>
+        </label>
+      </p>
+      <p>
+        <label>Conductor
+        <input name="conductor" type="text" id="conductor" required/>
+        </label>
+      </p>
+      <p>
+        <label>Tipo de Licencia 
+        <input name="tipo" type="text" id="tipo" required/>
+        </label>
+      </p>
+      <p>
+        <label>Fecha de Expedicion 
+        <input name="fechaExpedicion" type="date" id="fechaExpedicion" required/>
+        </label>
+    </p>
+      <p>
+        <label>Vigencia (3 o 5)
+        <input name="fechaVencimiento" type="number" id="fechaVencimiento" required/>
+        </label>
+      </p>
+      <p>
+        <label>Estado de Emision
+        <input name="estadoEmision" type="text" id="estadoEmision" required/>
+        </label>
+      </p>
+      <p>
+        <input class="boton" type="submit" name="Submit" value="Enviar" />
+      </p>
+    </form>
+  </div>
+
+<button class="boton" onclick="window.location = '../menu.html'">Regresar</button>
+<style type="text/css">
+#cont{
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  width: calc(100% - 20px);
+  background-color: #75B3A6;
+  margin: 10px;
+}
+.boton{
+  border-radius: 5px;
+  background-color: #16293A;
+  border-color: white;
+  width: 130px;
+  height: 25px;
+  margin-left: 10px;
+  color: white;
+  font-size: 17px;
+  align-content: center;
+}
+label{
+  font-size: 1.5em;
+}
+</style>
 </body>
 </html>

@@ -33,78 +33,80 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="">
-  <label>Criterio
-  <input name="criterio" type="text" id="criterio" />
-  </label>
-  <p>Campo
-    <select name="campo" id="campo">
-      <option value="<?php if (isset($columna[0])) {print($columna[0]);} ?>">
-        <?php if (isset($columna[0])) {print($columna[0]);}  ?></option>
+  <div id="cont">
+    <form id="form1" name="form1" method="post" action="">
+      <label>Criterio
+      <input name="criterio" type="text" id="criterio" />
+      </label>
+      <p>Campo
+        <select name="campo" id="campo">
+          <option value="<?php if (isset($columna[0])) {print($columna[0]);} ?>">
+            <?php if (isset($columna[0])) {print($columna[0]);}  ?></option>
 
-      <option value="<?php if (isset($columna[1])) {print($columna[1]);} ?>">
-        <?php if (isset($columna[1])) {print($columna[1]);}  ?></option>
+          <option value="<?php if (isset($columna[1])) {print($columna[1]);} ?>">
+            <?php if (isset($columna[1])) {print($columna[1]);}  ?></option>
 
-      <option value="<?php if (isset($columna[2])) {print($columna[2]);} ?>">
-        <?php if (isset($columna[2])) {print($columna[2]);}  ?></option>
-      
-      <option value="<?php if (isset($columna[3])) {print($columna[3]);} ?>">
-        <?php if (isset($columna[3])) {print($columna[3]);}  ?></option>
-      
-      <option value="<?php if (isset($columna[4])) {print($columna[4]);} ?>">
-        <?php if (isset($columna[4])) {print($columna[4]);}  ?></option>
-      
-      <option value="<?php if (isset($columna[5])) {print($columna[5]);} ?>">
-        <?php if (isset($columna[5])) {print($columna[5]);}  ?></option>
-      
-      <option value="<?php if (isset($columna[6])) {print($columna[6]);} ?>">
-        <?php if (isset($columna[6])) {print($columna[6]);}  ?></option>
-      
-      <option value="<?php if (isset($columna[7])) {print($columna[7]);} ?>">
-        <?php if (isset($columna[7])) {print($columna[7]);}  ?></option>
-      
-      <option value="<?php if (isset($columna[8])) {print($columna[8]);} ?>">
-        <?php if (isset($columna[8])) {print($columna[8]);}  ?></option>
+          <option value="<?php if (isset($columna[2])) {print($columna[2]);} ?>">
+            <?php if (isset($columna[2])) {print($columna[2]);}  ?></option>
+          
+          <option value="<?php if (isset($columna[3])) {print($columna[3]);} ?>">
+            <?php if (isset($columna[3])) {print($columna[3]);}  ?></option>
+          
+          <option value="<?php if (isset($columna[4])) {print($columna[4]);} ?>">
+            <?php if (isset($columna[4])) {print($columna[4]);}  ?></option>
+          
+          <option value="<?php if (isset($columna[5])) {print($columna[5]);} ?>">
+            <?php if (isset($columna[5])) {print($columna[5]);}  ?></option>
+          
+          <option value="<?php if (isset($columna[6])) {print($columna[6]);} ?>">
+            <?php if (isset($columna[6])) {print($columna[6]);}  ?></option>
+          
+          <option value="<?php if (isset($columna[7])) {print($columna[7]);} ?>">
+            <?php if (isset($columna[7])) {print($columna[7]);}  ?></option>
+          
+          <option value="<?php if (isset($columna[8])) {print($columna[8]);} ?>">
+            <?php if (isset($columna[8])) {print($columna[8]);}  ?></option>
 
-      <option value="<?php if (isset($columna[9])) {print($columna[9]);} ?>">
-        <?php if (isset($columna[9])) {print($columna[9]);}  ?></option>
+          <option value="<?php if (isset($columna[9])) {print($columna[9]);} ?>">
+            <?php if (isset($columna[9])) {print($columna[9]);}  ?></option>
 
-      <option value="<?php if (isset($columna[10])) {print($columna[10]);} ?>">
-        <?php if (isset($columna[10])) {print($columna[10]);}  ?></option>
+          <option value="<?php if (isset($columna[10])) {print($columna[10]);} ?>">
+            <?php if (isset($columna[10])) {print($columna[10]);}  ?></option>
 
-        <option value="<?php if (isset($columna[11])) {print($columna[11]);} ?>">
-        <?php if (isset($columna[11])) {print($columna[11]);}  ?></option>
+            <option value="<?php if (isset($columna[11])) {print($columna[11]);} ?>">
+            <?php if (isset($columna[11])) {print($columna[11]);}  ?></option>
 
-        <option value="<?php if (isset($columna[12])) {print($columna[12]);} ?>">
-        <?php if (isset($columna[12])) {print($columna[12]);}  ?></option>
+            <option value="<?php if (isset($columna[12])) {print($columna[12]);} ?>">
+            <?php if (isset($columna[12])) {print($columna[12]);}  ?></option>
 
-        <option value="<?php if (isset($columna[13])) {print($columna[13]);} ?>">
-        <?php if (isset($columna[13])) {print($columna[13]);}  ?></option>
+            <option value="<?php if (isset($columna[13])) {print($columna[13]);} ?>">
+            <?php if (isset($columna[13])) {print($columna[13]);}  ?></option>
 
-        <option value="<?php if (isset($columna[14])) {print($columna[14]);} ?>">
-        <?php if (isset($columna[14])) {print($columna[14]);}  ?></option>
+            <option value="<?php if (isset($columna[14])) {print($columna[14]);} ?>">
+            <?php if (isset($columna[14])) {print($columna[14]);}  ?></option>
 
-        <option value="<?php if (isset($columna[15])) {print($columna[15]);} ?>">
-        <?php if (isset($columna[15])) {print($columna[15]);}  ?></option>
+            <option value="<?php if (isset($columna[15])) {print($columna[15]);} ?>">
+            <?php if (isset($columna[15])) {print($columna[15]);}  ?></option>
 
-        <option value="<?php if (isset($columna[16])) {print($columna[16]);} ?>">
-        <?php if (isset($columna[16])) {print($columna[16]);}  ?></option>
+            <option value="<?php if (isset($columna[16])) {print($columna[16]);} ?>">
+            <?php if (isset($columna[16])) {print($columna[16]);}  ?></option>
 
-        <option value="<?php if (isset($columna[17])) {print($columna[17]);} ?>">
-        <?php if (isset($columna[17])) {print($columna[17]);}  ?></option>
+            <option value="<?php if (isset($columna[17])) {print($columna[17]);} ?>">
+            <?php if (isset($columna[17])) {print($columna[17]);}  ?></option>
 
-        <option value="<?php if (isset($columna[18])) {print($columna[18]);} ?>">
-        <?php if (isset($columna[18])) {print($columna[18]);}  ?></option>
-    </select>
-  </p>
-  <p>
-    <label>
-    <input name="Consultar" type="submit" id="Consultar" value="Consultar" />
-    </label>
-  </p>
-  <p>&nbsp;</p>
-  <?php $re=0 ?>
-</form>
+            <option value="<?php if (isset($columna[18])) {print($columna[18]);} ?>">
+            <?php if (isset($columna[18])) {print($columna[18]);}  ?></option>
+        </select>
+      </p>
+      <p>
+        <label>
+        <input class="boton" name="Consultar" type="submit" id="Consultar" value="Consultar" />
+        </label>
+      </p>
+      <?php $re=0 ?>
+    </form>
+  </div>
+
 
 
 
@@ -171,7 +173,36 @@
   
 ?>
   </table>
-  <button onclick="window.location = '../menu.html'">Regresar</button>
+  <button class="boton" onclick="window.location = '../menu.html'">Regresar</button>
+  <style type="text/css">
+  #cont{
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    width: calc(100% - 20px);
+    background-color: #75B3A6;
+    margin: 10px;
+    padding: 5px;
+  }
+  .boton{
+    border-radius: 5px;
+    background-color: #16293A;
+    border-color: white;
+    width: 130px;
+    height: 25px;
+    margin-left: 10px;
+    color: white;
+    font-size: 17px;
+    align-content: center;
+  }
+  label{
+    font-size: 1.5em;
+  }
+  </style>
 </body>
 </html>
 <?php print("<br><br>Registros encontrados: ".$re) ?>

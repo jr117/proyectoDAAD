@@ -3,17 +3,47 @@
 <html>
 <head>
 	<title>
-		Eliminacion de Conductor <!-- QUE BORRARA -->
+		Eliminacion de Conductor
 	</title>
 </head>
 <body>
-	<form id="form1" name="form1" method="post" action="">
-		<label>rfc Conductor</label> <!-- QUE PIDE -->
-		<input type="text" name="datoBorrar">
-		<input type="submit" name="Submit" value="Borrar" />
-	</form>
-
-	<button onclick="window.location = '../menu.html'">Regresar</button>
+	<div id="cont">
+		<form id="form1" name="form1" method="post" action="">
+			<label>rfc Conductor</label> <!-- QUE PIDE -->
+			<input type="text" name="datoBorrar">
+			<input class="boton" type="submit" name="Submit" value="Borrar" />
+		</form>
+	</div>
+	<button class="boton" onclick="window.location = '../menu.html'">Regresar</button>
+	<style type="text/css">
+	#cont{
+	  border-radius: 10px;
+	  position: relative;
+	  box-sizing: border-box;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-wrap: wrap-reverse;
+	  width: calc(100% - 20px);
+	  height: 50px;
+	  background-color: #75B3A6;
+	  margin: 10px;
+	}
+	.boton{
+	  border-radius: 5px;
+	  background-color: #16293A;
+	  border-color: white;
+	  width: 130px;
+	  height: 25px;
+	  margin-left: 10px;
+	  color: white;
+	  font-size: 17px;
+	  align-content: center;
+	}
+	label{
+	  font-size: 1.5em;
+	}
+	</style>
 </body>
 </html>
 

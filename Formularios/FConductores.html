@@ -7,68 +7,99 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="PConductores.php" enctype="multipart/form-data">
-  <p>Conductores</p>
-  <p>
-    <label>RFC
-    <input name="rfc" type="text" id="rfc" required/>
-    </label>
-  </p>
-  <p>
-    <label>Nombre
-    <input name="nombre" type="text" id="nombre" required/>
-    </label>
-  </p>
-  <p>
-    <label>Fecha de Nacimiento 
-    <input name="fechaNac" type="date" id="fechaNac" required/>
-    </label>
-  </p>
-  <p>
-    <label>Domicilio
-    <input name="domicilio" type="text" id="domicilio" required/>
-    </label>
-  </p>
-  <p>
-    <label>Antiguedad
-    <input name="antiguedad" type="text" id="antiguedad" required/>
-          </label>
-  </p>
-  <p>
-    <label>Sexo de Nacimiento
-    <input name="sexo" type="number" id="sexo" required/>
-    </label>
-  (1=Masculino, 0=Femenino) </p>
-  <p>
-    <label></label>
-    <label>Tipo de Sangre
-    <input name="tipoSangre" type="text" id="tipoSangre" />
-    </label>
-  </p>
-  <p>
-    <label>Restriccion
-    <input name="restriccion" type="text" id="restriccion" />
-    </label>
-  </p>
-  <p>
-    <label>Telefono de Emergencia
-    <input name="telEmergencia" type="tel" id="telEmergencia" />
-    </label>
-  </p>
-  <p>
-    <label>Foto (formato png)
-    <input name="foto" type="file" id="foto" required/>
-    </label>
-  </p>
-  <p>
-    <label>Firma (formato png)
-    <input name="firma" type="file" id="firma" required/>
-    </label>
-  </p>
-  <p>
-    <input type="submit" name="Submit" value="Enviar" />
-  </p>
-</form>
-<button onclick="window.location = '../menu.html'">Regresar</button>
+  <div id="cont">
+    <form id="form1" name="form1" method="post" action="PConductores.php" enctype="multipart/form-data">
+      <h1>Conductores</h1>
+      <p>
+        <label>RFC
+        <input name="rfc" type="text" id="rfc" required/>
+        </label>
+      </p>
+      <p>
+        <label>Nombre
+        <input name="nombre" type="text" id="nombre" required/>
+        </label>
+      </p>
+      <p>
+        <label>Fecha de Nacimiento 
+        <input name="fechaNac" type="date" id="fechaNac" required/>
+        </label>
+      </p>
+      <p>
+        <label>Domicilio
+        <input name="domicilio" type="text" id="domicilio" required/>
+        </label>
+      </p>
+      <p>
+        <label>Antiguedad
+        <input name="antiguedad" type="text" id="antiguedad" required/>
+              </label>
+      </p>
+      <p>
+        <label>Sexo de Nacimiento
+        <input name="sexo" type="number" id="sexo" required/>
+        </label>
+      (1=Masculino, 0=Femenino) </p>
+      <p>
+        <label></label>
+        <label>Tipo de Sangre
+        <input name="tipoSangre" type="text" id="tipoSangre" />
+        </label>
+      </p>
+      <p>
+        <label>Restriccion
+        <input name="restriccion" type="text" id="restriccion" />
+        </label>
+      </p>
+      <p>
+        <label>Telefono de Emergencia
+        <input name="telEmergencia" type="tel" id="telEmergencia" />
+        </label>
+      </p>
+      <p>
+        <label>Foto (formato png)
+        <input name="foto" type="file" id="foto" required/>
+        </label>
+      </p>
+      <p>
+        <label>Firma (formato png)
+        <input name="firma" type="file" id="firma" required/>
+        </label>
+      </p>
+      <p>
+        <input class="boton" type="submit" name="Submit" value="Enviar" />
+      </p>
+    </form>
+  </div>
+
+<button class="boton" onclick="window.location = '../menu.html'">Regresar</button>
+<style type="text/css">
+#cont{
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  width: calc(100% - 20px);
+  background-color: #75B3A6;
+  margin: 10px;
+}
+.boton{
+  border-radius: 5px;
+  background-color: #16293A;
+  border-color: white;
+  width: 130px;
+  height: 25px;
+  margin-left: 10px;
+  color: white;
+  font-size: 17px;
+  align-content: center;
+}
+label{
+  font-size: 1.5em;
+}
+</style>
 </body>
 </html>

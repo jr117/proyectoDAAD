@@ -7,37 +7,68 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="PPropietarios.php">
-  <p>Propietarios</p>
-  <p>
-    <label>RFC
-    <input name="rfc" type="text" id="rfc" required/>
-    </label>
-  </p>
-  <p>
-    <label>Nombre
-    <input name="nombre" type="text" id="nombre" required/>
-    </label>
-  </p>
-  <p>
-    <label>Direccion
-    <input name="direccion" type="text" id="direccion" required/>
-    </label>
-  </p>
-  <p>
-    <label>Telefono
-    <input name="telefono" type="tel" id="telefono" />
-    </label>
-</p>
-  <p>
-    <label>Correo
-    <input name="correo" type="email" id="correo" />
-    </label>
-  </p>
-  <p>
-    <input type="submit" name="Submit" value="Enviar" />
-  </p>
-</form>
-<button onclick="window.location = '../menu.html'">Regresar</button>
+  <div id="cont">
+    <form id="form1" name="form1" method="post" action="PPropietarios.php">
+      <h1>Propietarios</h1>
+      <p>
+        <label>RFC
+        <input name="rfc" type="text" id="rfc" required/>
+        </label>
+      </p>
+      <p>
+        <label>Nombre
+        <input name="nombre" type="text" id="nombre" required/>
+        </label>
+      </p>
+      <p>
+        <label>Direccion
+        <input name="direccion" type="text" id="direccion" required/>
+        </label>
+      </p>
+      <p>
+        <label>Telefono
+        <input name="telefono" type="tel" id="telefono" />
+        </label>
+    </p>
+      <p>
+        <label>Correo
+        <input name="correo" type="email" id="correo" />
+        </label>
+      </p>
+      <p>
+        <input class="boton" type="submit" name="Submit" value="Enviar" />
+      </p>
+    </form>
+  </div>
+
+<button class="boton" onclick="window.location = '../menu.html'">Regresar</button>
+<style type="text/css">
+#cont{
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  width: calc(100% - 20px);
+  background-color: #75B3A6;
+  margin: 10px;
+}
+.boton{
+  border-radius: 5px;
+  background-color: #16293A;
+  border-color: white;
+  width: 130px;
+  height: 25px;
+  margin-left: 10px;
+  color: white;
+  font-size: 17px;
+  align-content: center;
+}
+label{
+  font-size: 1.5em;
+}
+</style>
 </body>
 </html>
