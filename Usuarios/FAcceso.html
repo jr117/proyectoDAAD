@@ -10,15 +10,18 @@
 	<div id="out">
 		<h1 id="titulo">INICIO DE SESION</h1>
 		<div id="in">
-			<form id="form1" name="form1" method="get" action="validaAcceso.php">
+			<form id="form1" name="form1" method="post" action="validaAcceso.php" enctype="multipart/form-data">
 			  <p>Username:
 			    <input name="username" type="text" id="username" />
 			</p>
 			  <p>Password:
-			    <input name="password" type="text" id="password" />
+			    <input name="password" type="password" id="password" />
 			</p>
-			<p>Key:
-			    <input name="key" type="text" id="key" />
+			<p>Key(opcion 1):
+			    <input name="key1" type="password" id="key1" />
+			</p>
+			<p>Key(opcion 2):
+			    <input name="key2" type="file" id="key2" />
 			</p>
 			  <p>
 			    <input class="boton" id="enviar" type="submit" name="Submit" value="Enviar" />

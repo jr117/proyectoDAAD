@@ -2,9 +2,19 @@
 	session_start();
 
 	include("conexion.php");
-	$username = $_REQUEST['username'];
-	$password = $_REQUEST['password'];
-	$key = $_REQUEST['key'];
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$keyF = $_FILES["key2"]['tmp_name'];
+	if (!$keyF == "") {
+		$leer = fopen($keyF, "r");
+		$key = fgets($leer);
+		print($key);
+		fclose($leer);
+	}else{
+		$key = $_POST['key1'];
+	}
+
+
 	print($username."<br>");
 	printf("<br>");
 	if ($password == "" or $key== "") {
