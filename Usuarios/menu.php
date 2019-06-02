@@ -1,4 +1,5 @@
 <?php 
+	// VALIDA SI HAY SESION INICIADA
 	session_start();
 	if ($_SESSION['validacion']) {
 		print("Bienvenid@: ".$_SESSION['username']."<br>");

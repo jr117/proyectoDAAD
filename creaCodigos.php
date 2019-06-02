@@ -1,7 +1,7 @@
 <?php 
 	require "phpqrcode/qrlib.php";
 	require 'php-barcode-master/barcode.php';
-	
+	//CREA CODIDO QR
 	function creaQR($contenido)
 	{
 		$dir = 'temp/';
@@ -12,7 +12,7 @@
 		QRcode::png($contenido,$filename);
 		return $filename;
 	}
-
+	//CREA CODIGO DE BARRAS
 	function creaBarra($contenido)
 	{
 		$dir = 'temp/';

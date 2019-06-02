@@ -1,6 +1,6 @@
 
 <?php
-
+	//INICIA CONEXION SQLI
 	function Conectar(){
 		$parametros=parse_ini_file('..\configuracion.ini');
 		$Servidor=$parametros["Server"];
@@ -10,10 +10,12 @@
 		$Con = mysqli_connect($Servidor,$User,$Password,$DB);
 		return $Con;
 	}
+	//EJECUTA QUERY
 	function EjecutarConsulta($Con, $SQL){
 		$Query=mysqli_query($Con,$SQL);//or die (mysqli_error($Con));
 		return $Query;
 	}
+	//CIERRA CONEXION
 	function Cerrar($Con){
 		mysqli_close($Con);
 	}

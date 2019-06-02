@@ -1,10 +1,11 @@
 <?php 
 	session_start();
-
+	// IDENTIFICA LAS CREDENCIALES ESCRITAS
 	include("conexion.php");
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$keyF = $_FILES["key2"]['tmp_name'];
+	// VERIFICA SI SE INGRESO LLAVE POR ARCHIVO, SINO LEE EL TEXTO
 	if (!$keyF == "") {
 		$leer = fopen($keyF, "r");
 		$key = fgets($leer);
@@ -21,6 +22,7 @@
 		print("Todos los campos son requeridos");
 		header("refresh:2;url=menu.php");
 	}
+	// VERIFICA LA EXISTENCIA DEL USUARIO EN LA BASE DE DATOS
 	$con=Conectar();
 	$sql="SELECT * FROM usuarios WHERE username='$username';";
 	$query=EjecutarConsulta($con,$sql);

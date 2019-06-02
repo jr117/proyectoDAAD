@@ -1,4 +1,5 @@
 <?php
+//VALIDA QUE SE HAYA INICIADO SESION, USADO EN CASI TODO ARCHIVO
 	function valida()
 	{	
 		if (!isset($_SESSION['validacion']) or !isset($_SESSION['username'])) {

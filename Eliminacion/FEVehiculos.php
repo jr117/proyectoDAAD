@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<!-- FORMULARIO DE ELIMINACION -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,21 +50,23 @@
 </body>
 </html>
 
-<?php 
+<?php
+	//INCLUDES REQUERIDOS Y VALIDACION DE INICIO DE SESION
 	include('../valida.php');
 	include('../odbc.php');
 	include('../creaCodigos.php');
+	include('EvehiculosXML.php');
+	include("conexion.php");
 	valida();
 
-	
-
-	include('EvehiculosXML.php');
+	// VERIFICA QUE SE HAYA DADO UN DATO PARA BORRAR
 	if(isset($_POST['datoBorrar'])){
 		$datoBorrar=$_POST['datoBorrar'];
 		$idVehiculo = $datoBorrar;
 		print("Identificador: ".$datoBorrar);
 		print("<br>");
-		include("conexion.php");
+		
+		//CONECTA A LA BD Y BORRA EL ELEMENTO, MANDA ERROR SI NO SE ENCONTRO DATO
 		$Con= Conectar();
 		$SQL = "DELETE FROM vehiculos WHERE idVehiculo = '$datoBorrar';"; //DE QUE TABLA Y CONDICION
 		$Query = EjecutarConsulta($Con,$SQL);
@@ -74,6 +77,7 @@
 		}elseif($Status == 0){
 			print("No se encontro el dato");
 		}else{
+			// SI SE REALIZA CON EXITO, LO BORRA TAMBIEN DE LA TABLA ESPEJO
 			odbc_exec($conexionODBC, $SQL);
 			print("Se eliminaron ".$Status." registro(s)");
 			print("<br>");
@@ -89,7 +93,7 @@
 		print("No se ha modificado nada aun");
 	}
 
-	// mPDF
+	//COMPROBANTE DE ELIMINACION DEL ELEMENTO
 	function creaPdf($idVehiculo)
 	{
 		$html = '<!DOCTYPE html>
@@ -120,7 +124,7 @@
 	</body>
 	</html>';
 
-	
+	// CREACION DEL COMPROBANTE EN PDF Y GUARDADO
 	require_once '../vendor/autoload.php';
 	$mpdf = new \Mpdf\Mpdf();
 	$css = file_get_contents('../cssPDF/style.css');

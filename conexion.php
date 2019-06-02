@@ -1,6 +1,6 @@
 
 <?php
-
+	//CONECTA, EJECUTA QUERY Y CIERRA CONEXION
 	function Conectar(){
 		$parametros=parse_ini_file('./configuracion.ini');
 		$Servidor=$parametros["Server"];

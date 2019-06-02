@@ -1,10 +1,12 @@
 <?php 
+  // INCLUIDES REQUERIDOS Y VALIDADOR DE INICIO DE SESION
   session_start();
   include('../valida.php');
+  include("conexion.php");
   valida();
 
+  //CONECTA CON BASE DE DATOS Y BUSCA LA TABLA A CONSULTAR
   $tabla='vehiculos';
-  include("conexion.php");
   $con = Conectar();
   $sql0="SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='$tabla';";
   $query0=EjecutarConsulta($con, $sql0);
@@ -22,7 +24,7 @@
         //print($columna[$y]);
     }
  ?>
-
+<!-- GENERA FORMULARIO DE BUSQUEDA -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -109,6 +111,7 @@
 
 
 <?php 
+  //VERIFICA SE HAYA INGRESADO EL CRITERIO DE BUSQUEDA Y SE BUSCA EN LA BD
   if (isset($_POST['criterio'])) {
     $criterio=$_POST['criterio'];
     $campo = $_POST['campo'];
@@ -166,6 +169,7 @@
       </tr>
 <?php
     }
+    // SE CIERRA LA CONEXION
     Cerrar($con);
   }
   

@@ -1,12 +1,17 @@
 <?php session_start(); ?>
 <?php 
+	
+	//ARCHIVOS REQUERIDOS PARA EL CORRECTO FUNCIONAMIENTO DEL ARCHIVO
 	include('../valida.php');
 	include('../odbc.php');
 	include('../creaCodigos.php');
 	include('vehiculosXML.php');
+	include("conexion.php");
+
+	// VALIDA QUE SE HAYA INICIADO SESION
 	valida();
 
-	
+	//TOMA TODOS LOS VALORES LLENADOS EN EL FORMULARIO
 	$idVehiculo = $_POST['idVehiculo'];
 	$propietario = $_POST['propietario'];
 	$placa = $_POST['placa'];
@@ -45,12 +50,12 @@
 	print("Origen: " . $origen . "<br>");
 	print("Numero de Puertas: " . $numPuerta . "<br>");	
 
+	// CREA EL CODIGO A USAR EN EL COMPROBANTE
 	$contenidoCodigo = "ID:".$idVehiculo." Propietario:".$propietario." Placa:".$placa;
 	$rutaCodigo = creaQR($contenidoCodigo);
 
-	include("conexion.php");
+	//CONECTAR A LA BASE DE DATOS PARA REALIZAR EL QUERY
 	$Con= Conectar();
-	//explicito
 	$SQL= "INSERT INTO vehiculos (numPuerta,marca,numMotor,numSerie,modelo,combustible,ano,numeroCilindro,transmision,linea,origen,color,tipo,uso,placa,niv, propietario,idVehiculo) VALUES('$numPuerta','$marca','$numMotor','$numSerie','$modelo','$combustible','$ano','$numeroCilindro','$transmision','$linea','$origen','$color','$tipo','$uso','$placa','$niv','$propietario','$idVehiculo');";
 	$Query = EjecutarConsulta($Con,$SQL);
 	//VERIFICAR SI SE HICIERON CAMBIOS O HUBO ERROR
@@ -65,7 +70,8 @@
 		exit();
 	}
 	Cerrar($Con);
-	// mPDF
+
+	// CREACION DEL COMPROBANTE
 	$html = '<!DOCTYPE html>
 <html>
 <head>
@@ -113,7 +119,8 @@
   </div>
 </body>
 </html>';
-
+	
+	// GENERACION DEL PDF Y GUARDADO
 	require_once '../vendor/autoload.php';
 	$mpdf = new \Mpdf\Mpdf();
 	$css = file_get_contents('../cssPDF/style.css');

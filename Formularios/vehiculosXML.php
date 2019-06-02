@@ -1,7 +1,6 @@
 <?php 
 	
-	
-	//Incio("1","5321","3","12/12/2012","12/12/1222","Queretaro");
+	//RECIBE LOS DATOS A INGRESAR AL XML Y DEFINE SI ES NECESARIO CREAR EL ARCHIVO O EDITAR
 
 	function Incio($idVehiculo,$propietario,$niv,$placa,$uso,$tipo,$color,$origen,$linea,$transmision,$numeroCilindro,$ano,$combustible,$modelo,$numSerie,$numMotor,$marca,$numPuerta){
 		$dir = '../temp/';
@@ -17,6 +16,7 @@
 		}
 	}
 
+	//CREA EL ARCHIVO Y AÑADE LA INFORMACION
 	function CreayAgrega($idVehiculo,$propietario,$niv,$placa,$uso,$tipo,$color,$origen,$linea,$transmision,$numeroCilindro,$ano,$combustible,$modelo,$numSerie,$numMotor,$marca,$numPuerta){
 		$filename='../temp/vehiculosXML.xml';
 		$xml = new SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?> <vehiculos></vehiculos>');
@@ -42,7 +42,7 @@
 
 		$xml->asXML($filename);
 	}
-
+	// AGREGA LA INFORMACION AL XML EXISTENTE
 	function Agrega($xml,$idVehiculo,$propietario,$niv,$placa,$uso,$tipo,$color,$origen,$linea,$transmision,$numeroCilindro,$ano,$combustible,$modelo,$numSerie,$numMotor,$marca,$numPuerta){
 		$filename='../temp/vehiculosXML.xml';
 		$xml = $xml;

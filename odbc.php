@@ -1,5 +1,5 @@
 <?php
-
+	//REALIZA LA CONEXION CON LA BASE DE DATOS ESPEJO POR ODBC
 	$parametros=parse_ini_file('configuracion.ini');
 
 	$dns=$parametros["ODBCdns"];

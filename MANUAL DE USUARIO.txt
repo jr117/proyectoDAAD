@@ -1,6 +1,5 @@
 ﻿-XAMPP (dejar todo por default)
 -driver odbc-mysql
--Composer-Setup
 
 -Copiar toda la carpeta (SCV) a la ubicacion: C:\xampp\htdocs
 

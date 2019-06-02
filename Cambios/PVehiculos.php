@@ -1,12 +1,14 @@
 <?php session_start();?>
 <?php 
+	//INCLUDES REQUERIDOS
 	include('../valida.php');
 	include('../odbc.php');
 	include('../creaCodigos.php');
-	valida();
-
 	include('vehiculosXML.php');
 	include('EvehiculosXML.php');
+	valida();
+
+	//SE GUARDAN LOS DATOS DEL FORMULARIO
 	$idVehiculo = $_POST['idVehiculo'];
 	$propietario = $_POST['propietario'];
 	$placa = $_POST['placa'];
@@ -45,10 +47,11 @@
 	print("Origen: " . $origen . "<br>");
 	print("Numero de Puertas: " . $numPuerta . "<br>");	
 
+	// SE GENERA EL CODIGO USADO EN EL COMPROBANTE
 	$contenidoCodigo = "ID:".$idVehiculo." Propietario:".$propietario." Placa:".$placa;
 	$rutaCodigo = creaQR($contenidoCodigo);
 
-	//borra antes de insertar
+	//SE BUSCA Y BORRA EL REGISTRO ANTIGUO ANTES DE INSERTAR UNO NUEVO
 	$datoBorrar=$idVehiculo;
 	print("Identificador: ".$datoBorrar);
 	print("<br>");
@@ -63,12 +66,14 @@
 	}elseif($Status == 0){
 		print("No se encontro el dato");
 	}else{
+		//SI SE REALIZO EL BORRADO SE BORRA DE LA TABLA ESPEJO Y SE INSERTA EL NUEVO REGISTRO EN LA BD
 		odbc_exec($conexionODBC, $SQL);
 		//explicito
 		$SQL= "INSERT INTO vehiculos (numPuerta,marca,numMotor,numSerie,modelo,combustible,ano,numeroCilindro,transmision,linea,origen,color,tipo,uso,placa,niv, propietario,idVehiculo) VALUES('$numPuerta','$marca','$numMotor','$numSerie','$modelo','$combustible','$ano','$numeroCilindro','$transmision','$linea','$origen','$color','$tipo','$uso','$placa','$niv','$propietario','$idVehiculo');";
 		$Query = EjecutarConsulta($Con,$SQL);
 		//VERIFICAR SI SE HICIERON CAMBIOS O HUBO ERROR
 		if($Query == 1){
+			// SI SE INSERTA CON EXITO SE REALIZA LA INSERCION EN LA TABLA ESPEJO
 			odbc_exec($conexionODBC, $SQL);
 			print("Registro modificado");
 			print("<br>");
@@ -83,7 +88,7 @@
 	print("<br>");
 	Cerrar($Con);
 	
-	// mPDF
+	//SE CREA EL COMPROBANTE
 	$html = '<!DOCTYPE html>
 	<html>
 	<head>
@@ -132,6 +137,7 @@
 	</body>
 	</html>';
 
+	//SE GENERA EL PDF Y SE GUARDA SOBREESCRIBIENDO EL ANTIGUO
 	require_once '../vendor/autoload.php';
 	$mpdf = new \Mpdf\Mpdf();
 	$css = file_get_contents('../cssPDF/style.css');
