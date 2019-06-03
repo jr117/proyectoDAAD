@@ -65,6 +65,10 @@
 		$idVehiculo = $datoBorrar;
 		print("Identificador: ".$datoBorrar);
 		print("<br>");
+		if ($datoBorrar==0) {
+			print("Error, no se puede borrar este dato");
+			exit();
+		}
 		
 		//CONECTA A LA BD Y BORRA EL ELEMENTO, MANDA ERROR SI NO SE ENCONTRO DATO
 		$Con= Conectar();
