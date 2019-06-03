@@ -146,14 +146,6 @@ ALTER TABLE `verificaciones`
   ADD PRIMARY KEY (`idVerificacion`),
   ADD KEY `vehiculo` (`vehiculo`);
 
-
-ALTER TABLE `vehiculos`
-  MODIFY `idVehiculo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
-ALTER TABLE `verificaciones`
-  MODIFY `idVerificacion` int(8) NOT NULL AUTO_INCREMENT;
-
-
 ALTER TABLE `licencias`
   ADD CONSTRAINT `licencias_ibfk_1` FOREIGN KEY (`conductor`) REFERENCES `conductores` (`rfc`);
 
