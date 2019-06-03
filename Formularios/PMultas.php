@@ -11,6 +11,15 @@
 	$vehiculo = $_POST['vehiculo'];
 	$verificacion = $_POST['verificacion'];
 	$licencia = $_POST['licencia'];
+	if ($vehiculo=="") {
+		$vehiculo=0;
+	}
+	if ($verificacion=="") {
+		$verificacion=0;
+	}
+	if ($licencia=="") {
+		$licencia=0;
+	}
 	
 	$descripcion = $_POST['descripcion'];
 	$monto = $_POST['monto'];
